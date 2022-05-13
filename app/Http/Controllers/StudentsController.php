@@ -83,7 +83,7 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -95,7 +95,7 @@ class StudentsController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        return $student;
     }
 
     /**

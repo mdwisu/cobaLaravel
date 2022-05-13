@@ -15,8 +15,8 @@
                         <p class="card-text">{{ $student->jurusan }}</p>
 
 
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <form action="{{ $student->id }}" method="post" class="d-inline">
+                        <a href="/students/{{ $student->id }}/edit" class="btn btn-primary">Edit</a>
+                        <form action="/students/{{ $student->id }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button type="submit" class="btn btn-danger">Delete</button>
