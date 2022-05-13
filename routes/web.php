@@ -30,15 +30,15 @@ Route::controller(MahasiswaController::class)->group(function () {
 });
 
 // students
-Route::get('/students', [StudentsController::class, 'index']);
-Route::get('/students/create', [StudentsController::class, 'create']);
-Route::post('/students', [StudentsController::class, 'store']);
-Route::get('/students/{student}', [StudentsController::class, 'show']);
-Route::get('/students/{student}/edit', [StudentsController::class, 'edit']);
-Route::put('/students/{student}', [StudentsController::class, 'update']);
-Route::delete('/students/{student}', [StudentsController::class, 'destroy']);
+// Route::get('/students', [StudentsController::class, 'index']);
+// Route::get('/students/create', [StudentsController::class, 'create']);
+// Route::post('/students', [StudentsController::class, 'store']);
+// Route::get('/students/{student}', [StudentsController::class, 'show']);
+// Route::get('/students/{student}/edit', [StudentsController::class, 'edit']);
+// Route::put('/students/{student}', [StudentsController::class, 'update']);
+// Route::delete('/students/{student}', [StudentsController::class, 'destroy']);
 
-
+Route::resource('/students', 'App\Http\Controllers\StudentsController');
 
 
 

@@ -56,7 +56,7 @@ class StudentsController extends Controller
         // ]);
         $request->validate([
             'nama' => 'required',
-            'nrp' => 'required|max:10',
+            'nrp' => 'required|max:10|unique:Students,nrp',
         ]);
         Student::create($request->all());
 
@@ -95,7 +95,19 @@ class StudentsController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        return $student;
+        $request->validate([
+            'nama' => 'required',
+            'nrp' => 'required|max:10|unique:Students,nrp',
+        ]);
+
+        Student::where('id', $student->id)
+                ->update([
+                    'nama' =>$request->nama,
+                    'nrp' =>$request->nrp,
+                    'email' =>$request->email,
+                    'jurusan' =>$request->jurusan,
+                ]);
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Diubah');
     }
 
     /**
